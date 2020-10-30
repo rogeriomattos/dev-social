@@ -1,7 +1,8 @@
 <h1 align="center">Dev Social</h1>
 <p align="center">
-Rede social focada em compartilhar conteúdos sobre desenvolvimento
+  <b>Rede social focada em compartilhar conteúdos sobre desenvolvimento</b>
 </p>
+<p align="center">:construction: Em construção :construction:</p>
 
 <p align="center">
   <a href="#autor">Autor</a> •
