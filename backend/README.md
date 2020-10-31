@@ -15,3 +15,5 @@ As seguintes tecnologias foram usadas na construção do backend:
 - [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/)
+- [Knex.js](http://knexjs.org/)
+- [SQLite](https://www.sqlite.org/index.html)
