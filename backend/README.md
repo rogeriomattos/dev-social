@@ -1,4 +1,4 @@
-<h1>Backend</h1>
+<h1 align="center">Backend</h1>
 <p align="center">
   <a href="#pré-requisitos">Pré-requisitos</a> • 
   <a href="#como-executar-o-servidor">Como executar o servidor</a> •
