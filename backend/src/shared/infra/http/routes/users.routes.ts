@@ -6,5 +6,6 @@ const routes = Router();
 const userController = new UsersController();
 
 routes.post('/', userController.create);
+routes.get('/:id', userController.show);
 
 export default routes;

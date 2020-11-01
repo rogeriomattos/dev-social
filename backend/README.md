@@ -50,6 +50,11 @@ Por último, para rodar o servidor execute o comando abaixo:
   }
 ```
 
+- Get user
+```
+  GET base_url/users/:id
+```
+
 ### Tecnologias
 
 As seguintes tecnologias foram usadas na construção do backend:
