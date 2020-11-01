@@ -33,6 +33,7 @@ class UsersController {
 
             const user = await usersRespository.find(id);
 
+            delete user.password;
             return response.status(200).json(user);
         } catch (error) {
             return response.status(500).json({message:error});
