@@ -1,11 +1,13 @@
+import Knex from 'knex';
 import path from 'path';
 
-module.exports = {
+export const development: Knex.Config = {
     client: 'sqlite3',
     connection: {
-        filename: path.resolve(__dirname, 'src', 'database', 'database.sqlite')
+        filename: path.resolve(__dirname, 'src', 'shared', 'infra', 'database', 'database.sqlite')
     },
     migrations: {
-        directory: path.resolve(__dirname, 'src', 'database', 'migrations')
-    }
+        directory: path.resolve(__dirname, 'src', 'shared', 'infra', 'database', 'migrations')
+    },
+    useNullAsDefault: true,
 };

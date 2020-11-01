@@ -37,6 +37,18 @@ Por último, para rodar o servidor execute o comando abaixo:
 ### MER
 
 ### API
+**Users**
+
+- Create user
+```
+  POST base_url/users
+
+  body: {
+    email: string;
+    email: string;
+    password: stirng;
+  }
+```
 
 ### Tecnologias
 
