@@ -37,6 +37,18 @@ Por último, para rodar o servidor execute o comando abaixo:
 ### MER
 
 ### API
+**Sessions**
+- Auth
+```
+  POST base_url/sessions/auth
+
+  body: {
+    email: string;
+    password: stirng;
+  }
+
+```
+
 **Users**
 
 - Create user
@@ -44,7 +56,7 @@ Por último, para rodar o servidor execute o comando abaixo:
   POST base_url/users
 
   body: {
-    email: string;
+    name: string;
     email: string;
     password: stirng;
   }
