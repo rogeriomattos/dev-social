@@ -49,6 +49,19 @@ class UsersRepository implements IRepository<User> {
         });
     }
 
+    findByEmail(email: string): Promise<User|undefined> {
+        return new Promise(async (resolve, reject) => {
+            try{   
+                const user = await knex(usersTableName).where('email', email).first();
+                if(!user)
+                    resolve(undefined);
+                resolve(new User(user));
+            }catch(error) {
+                reject(error);
+            }
+        });
+    }
+
     listAll(): Promise<User[]> {
         return new Promise((resolve, reject) => {
 
