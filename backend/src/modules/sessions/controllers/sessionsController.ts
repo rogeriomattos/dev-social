@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { sign } from 'jsonwebtoken';
+import authConfig from '../../../config/auth';
 
 import AuthenticateUserService from '../services/AuthenticateUserService';
 
@@ -14,10 +15,10 @@ class SessionsController {
                 email,
                 password
             });
-
-            const token = sign({}, '11fa45ec60a3ef3421c3ce6f86b564e6', {
+            const { secret, expiresIn } = authConfig.jwt;
+            const token = sign({}, secret, {
                 subject: user.id.toString(),
-                expiresIn: '1d',
+                expiresIn,
             });
 
             response.status(200).json({ 
