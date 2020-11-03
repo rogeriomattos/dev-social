@@ -37,35 +37,7 @@ Por último, para rodar o servidor execute o comando abaixo:
 ### MER
 
 ### API
-**Sessions**
-- Auth
-```
-  POST base_url/sessions/auth
-
-  body: {
-    email: string;
-    password: stirng;
-  }
-
-```
-
-**Users**
-
-- Create user
-```
-  POST base_url/users
-
-  body: {
-    name: string;
-    email: string;
-    password: stirng;
-  }
-```
-
-- Get user
-```
-  GET base_url/users/:id
-```
+[Documentação](https://github.com/rogeriomattos/dev-social/wiki/API-documentation)
 
 ### Tecnologias
 
