@@ -8,10 +8,10 @@ const createPublication = new CreatePublication(publicationsRespository);
 class PublicationController {
     async create(request: Request, response: Response) {
         try {
-            const { description, user_id } = request.body;
+            const { description } = request.body;
 
             const publication = await createPublication.execute({
-                user_id: user_id,
+                user_id: request.user.id,
                 description
             });
 

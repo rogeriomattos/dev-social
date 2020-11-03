@@ -24,10 +24,10 @@ export default function ensureAuthenticated(
 
     try {
         const decode = verify(token, authConfig.jwt.secret);
-
+        
         const { sub, iat, exp } = decode as TokenPayload;
         
-        request.user.id = parseInt(sub);
+        request.user = { id: parseInt(sub) };
         
         return next();
     } catch (error) {
