@@ -13,18 +13,18 @@ export default function ensureAuthenticated(
     response:Response, 
     next:NextFunction
 ): void {
-
+    
     const authHeader = request.headers.authorization;
-
+    
     if(!authHeader){
-        throw new Error('JWT toke is missing');
+        throw new Error('JWT token is missing');
     }
 
     const [, token] = authHeader.split(' ');
 
     try {
         const decode = verify(token, authConfig.jwt.secret);
-        
+
         const { sub, iat, exp } = decode as TokenPayload;
         
         request.user = { id: parseInt(sub) };
