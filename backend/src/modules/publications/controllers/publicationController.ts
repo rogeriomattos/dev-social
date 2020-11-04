@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import { CreatePublication } from '../services';
-import PublicationsRespository from '../repositories/publicationsRespository';
+import PublicationsRepository from '../repositories/publicationsRepository';
 
-const publicationsRespository = new PublicationsRespository();
-const createPublication = new CreatePublication(publicationsRespository);
+const publicationsRepository = new PublicationsRepository();
+const createPublication = new CreatePublication(publicationsRepository);
 
 class PublicationController {
     async create(request: Request, response: Response) {

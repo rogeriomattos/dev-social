@@ -4,7 +4,7 @@ import Publication from "../entites/publication";
 
 const publicationsTable = 'publications'
 
-class PublicationsRespository implements IRepository<Publication> {
+class PublicationsRepository implements IRepository<Publication> {
     create({ description, user_id, created_date }: Omit<Publication, 'id'>): Promise<Publication>{
         return new Promise(async(resolve, reject) => {
             const publicationId =  await knex(publicationsTable).insert({
@@ -36,7 +36,7 @@ class PublicationsRespository implements IRepository<Publication> {
             try{   
                 const publication = await knex(publicationsTable).where('id', id).first();
                 if(!publication)
-                    throw Error('User not found.' ); 
+                    throw Error('Publication not found.' ); 
                 resolve(new Publication(publication));
             }catch(error) {
                 reject(error);
@@ -59,4 +59,4 @@ class PublicationsRespository implements IRepository<Publication> {
     }
 }
 
-export default PublicationsRespository;
+export default PublicationsRepository;

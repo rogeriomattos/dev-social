@@ -1,5 +1,5 @@
 import Publication from "../entites/publication";
-import PublicationsRespository from "../repositories/publicationsRespository";
+import PublicationsRepository from "../repositories/publicationsRepository";
 
 interface Request {
     user_id: number;
@@ -8,9 +8,9 @@ interface Request {
 
 class CreatePublication {
     
-    private publicationRepository: PublicationsRespository;
+    private publicationRepository: PublicationsRepository;
 
-    constructor(publicationRepository: PublicationsRespository){
+    constructor(publicationRepository: PublicationsRepository){
         this.publicationRepository = publicationRepository;
     }
     
