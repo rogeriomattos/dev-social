@@ -25,8 +25,24 @@ class UsersRepository implements IRepository<User> {
     }
 
     update({id, name, email, password, bio, profilePhoto }: Omit<User, ''>): Promise<User> {
-        return new Promise((resolve, reject)=>{
+        return new Promise(async(resolve, reject)=>{
+            try {
+                const userId = await  knex(usersTableName)
+                                    .where('id', id)
+                                    .update({
+                                        name, 
+                                        email, 
+                                        password, 
+                                        bio, 
+                                        profilePhoto
+                                    });
+                
+                const user = await this.find(userId);
 
+                resolve(user);
+            } catch (error) {
+                reject(error);
+            }
         });
     }
 

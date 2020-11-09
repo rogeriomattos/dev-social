@@ -12,6 +12,8 @@ const userController = new UsersController();
 
 routes.post('/', userController.create);
 routes.get('/:id', userController.show);
+
+routes.use(ensureAuthenticated).put('/:id', userController.update);
 routes.use('/:id/followers', ensureAuthenticated);
 routes.post('/:id/followers', followersController.create);
 routes.delete('/:id/followers', followersController.delete);
