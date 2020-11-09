@@ -13,16 +13,16 @@ class CreateUser {
             try {
 
                 if(!email)
-                    throw Error("Email é obrigatório");
+                    throw Error("Email is required");
                 if(!password)
-                    throw Error("Senha é obrigatória");
+                    throw Error("Password is required");
                 if(!name)
-                    throw Error("Nome é obrigatório");
+                    throw Error("Name is required");
                 
                 const userExist = await this.usersRepository.findByEmail(email);
                 
                 if(userExist)
-                    throw Error("Já existe um usuário com esse email");
+                    throw Error("A user with this email already exists");
                 
                 const user = await this.usersRepository.create({email, password, name});
                 

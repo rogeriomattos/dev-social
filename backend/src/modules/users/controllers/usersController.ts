@@ -23,7 +23,7 @@ class UsersController {
             return response.status(201).json(user);
 
         } catch (error) {
-            return response.status(500).json({message:error});
+            return response.status(500).json({message:error.message});
         }
     }
 
@@ -36,7 +36,7 @@ class UsersController {
             delete user.password;
             return response.status(200).json(user);
         } catch (error) {
-            return response.status(500).json({message:error});
+            return response.status(500).json({message:error.message});
         }
     }
 }
